@@ -14,7 +14,6 @@ RUN unzip /tmp/tekkit.zip -d /minecraft/
 ADD ./entrypoint.sh /minecraft/entrypoint.sh
 RUN chmod +x /minecraft/entrypoint.sh
 
-VOLUME /minecraft
 EXPOSE 25565
 
 WORKDIR /minecraft
