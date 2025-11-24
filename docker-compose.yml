@@ -2,7 +2,7 @@ services:
   tekkit-server:
     build: .
     command: >
-      java -Dlog4j.configurationFile=log4j2_server.xml -Xmx2G -Xms1G -jar TekkitLegends.jar nogui
+      java -Dlog4j.configurationFile=log4j2_server.xml -Xmx4G -Xms2G -jar TekkitLegends.jar nogui
     ports:
       - "25565:25565"
     environment:
@@ -11,3 +11,4 @@ services:
     tty: true
     volumes:
       - ./data/world:/tekkit/world
+      - ./server.properties:/tekkit/server.properties
