@@ -1,12 +1,13 @@
 services:
   tekkit-server:
     build: .
+    command: >
+      java -Dlog4j.configurationFile=log4j2_server.xml -Xmx2G -Xms1G -jar TekkitLegends.jar nogui
     ports:
       - "25565:25565"
     environment:
       - SERVER_OP=acidtib,gopherthegold
-      - JAVA_ARGS=-Dlog4j.configurationFile=log4j2_server.xml -Xmx2G -Xms1G -XX:MaxPermSize=128m
     restart: unless-stopped
     tty: true
     volumes:
-      - ./data/world:/minecraft/world
+      - ./data/world:/tekkit/world
