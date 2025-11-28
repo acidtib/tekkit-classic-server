@@ -1,1 +1,7 @@
-.git
+/.git/
+/.gitignore
+
+/.env*
+
+/data/*
+!/data/.keep
